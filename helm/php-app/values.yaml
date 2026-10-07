@@ -1,0 +1,26 @@
+php:
+  replicaCount: 2
+
+  image:
+    repository: 207763041106.dkr.ecr.ap-south-1.amazonaws.com/php-3tier-app
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  service:
+    type: LoadBalancer
+    port: 80
+
+mysql:
+  image:
+    repository: mysql
+    tag: "8.4"
+
+  database: employee_db
+  user: appuser
+
+  persistence:
+    enabled: true
+    size: 5Gi
+
+config:
+  dbHost: mysql-service

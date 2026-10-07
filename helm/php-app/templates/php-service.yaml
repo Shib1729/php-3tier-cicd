@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-service
+spec:
+  type: {{ .Values.php.service.type }}
+
+  selector:
+    app: php-app
+
+  ports:
+    - port: {{ .Values.php.service.port }}
+      targetPort: 80

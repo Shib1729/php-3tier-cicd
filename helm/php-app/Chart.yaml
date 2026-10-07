@@ -1,0 +1,6 @@
+apiVersion: v2
+name: php-app
+description: Helm chart for ABC Technologies 3-tier PHP application
+type: application
+version: 0.1.0
+appVersion: "1.0"
