@@ -6,7 +6,9 @@ pipeline {
         ECR_REPOSITORY = 'php-3tier-app'
         EKS_CLUSTER    = 'php-3tier-cluster'
         HELM_RELEASE   = 'php-app'
-        K8S_NAMESPACE  = 'php-app'
+        K8S_NAMESPACE      = 'php-app'
+        MYSQL_ROOT_PASSWORD = credentials('mysql-root-password')
+        MYSQL_APP_PASSWORD  = credentials('mysql-app-password')
     }
 
     stages {
